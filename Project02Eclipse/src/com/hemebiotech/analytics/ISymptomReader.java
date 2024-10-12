@@ -11,8 +11,6 @@ import java.util.List;
  */
 public interface ISymptomReader {
 	
-	
-	
     // If no data is available, return an empty List
 	
 	List<String> GetSymptoms ();
