@@ -16,10 +16,6 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
 	
 	public void writeSymptoms(Map<String, Integer> symptoms) {
 		
-		// trie de la liste des symptoms recue 
-		TreeMap<String,Integer> listeTrie= new TreeMap<String,Integer>();
-		listeTrie.putAll(symptoms);
-		
 		
 		//ecriture des donnees donnees dans le fichier resultat.out
 		try {
@@ -30,7 +26,7 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
 			writer.write("\t\t"+"_________"+"\t\t\t\t"+"_______"+"\n");
 			writer.write("\n");
 			writer.write("\n");
-	        for (Map.Entry<String, Integer> entry : listeTrie.entrySet()) {
+	        for (Map.Entry<String, Integer> entry : symptoms.entrySet()) {
 	            writer.write("\t\t" + entry.getKey() + "\t\t\t\t " + entry.getValue()+"\n");
 	        }
 	        writer.close();
